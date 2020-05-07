@@ -1,12 +1,12 @@
 day02
 
-activity
+## activity
 
 1.生命周期<br/>	1.1 onCreate：正创建，进行初始化工作<br/>	1.2 onStart：正启动，已出现但未到前台未可交互<br/>	1.3 onResume：已可见，在前台，可交互<br/>	1.4 onPause：正在停止，紧接着调用onStop<br/>	1.5 onStop：即将停止<br/>	1.6 onRestart：正在重新启动，由不可见变为可见时<br/>	1.7 onDestroy：销毁
 
 2.启动模式<br/>	2.1 standard ：默认，会重复创建实例<br/>	2.2 singleTop：栈顶重复不创建<br/>	2.3 singleTask：栈内重复不创建，并将其前面活动弹出<br/>	2.4 singleInstance：两个栈存放活动
 
-其他：
+## 其他：
 
 线程进程的区别体现在几个方面：
 
