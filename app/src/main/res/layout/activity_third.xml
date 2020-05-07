@@ -5,24 +5,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".ThirdActivity">
     <Button
-        android:id="@+id/second_button"
+        android:id="@+id/activity_third_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="显式启动"/>
-
+        android:text="singleTask测试"/>
     <Button
-        android:id="@+id/third_button"
+        android:id="@+id/third_tmp_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="隐式启动"/>
-
-    <Button
-        android:id="@+id/activity_main_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="standard测试"/>
-
+        android:text="中转按钮"/>
 </LinearLayout>

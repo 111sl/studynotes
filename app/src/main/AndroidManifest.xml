@@ -16,6 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ThirdActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.uncle.studynotes.START_TEST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FourthActivity"
+            android:launchMode="singleInstance"></activity>
     </application>
 
 </manifest>

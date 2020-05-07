@@ -2,27 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
     <Button
-        android:id="@+id/second_button"
+        android:id="@+id/activity_second_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="显式启动"/>
+        android:text="singleTop测试"/>
 
     <Button
-        android:id="@+id/third_button"
+        android:id="@+id/second_tmp_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="隐式启动"/>
+        android:text="中转按钮"/>
 
     <Button
-        android:id="@+id/activity_main_test"
+        android:id="@+id/second_third_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="standard测试"/>
-
+        android:text="跳转验证singleInstance"/>
 </LinearLayout>
