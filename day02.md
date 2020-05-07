@@ -6,7 +6,7 @@ day02
 
 2.启动模式<br/>	2.1 standard ：默认，会重复创建实例<br/>	2.2 singleTop：栈顶重复不创建<br/>	2.3 singleTask：栈内重复不创建，并将其前面活动弹出<br/>	2.4 singleInstance：两个栈存放活动
 
-### 其他：
+## 其他：
 
 线程进程的区别体现在几个方面：
 
