@@ -1,10 +1,12 @@
+
+
 day02
 
 ## activity
 
 1.生命周期<br/>	1.1 onCreate：正创建，进行初始化工作<br/>	1.2 onStart：正启动，已出现但未到前台未可交互<br/>	1.3 onResume：已可见，在前台，可交互<br/>	1.4 onPause：正在停止，紧接着调用onStop<br/>	1.5 onStop：即将停止<br/>	1.6 onRestart：正在重新启动，由不可见变为可见时<br/>	1.7 onDestroy：销毁
 
-2.启动模式<br/>	2.1 standard ：默认，会重复创建实例<br/>	2.2 singleTop：栈顶重复不创建<br/>	2.3 singleTask：栈内重复不创建，并将其前面活动弹出<br/>	2.4 singleInstance：两个栈存放活动
+2.启动模式<br/>	2.1 standard ：默认，会重复创建实例<br/>	2.2 singleTop：栈顶重复不创建<br/>	2.3 singleTask：栈内重复不创建，并将其前面活动弹出<br/>	2.4 singleInstance：~~两个栈存放活动~~<br/>		singleInstance是单独开辟一个新的任务栈对activity进行存放
 
 ### 其他：
 
@@ -27,3 +29,29 @@ day02
 关于回调
 
 参考：https://blog.csdn.net/yilovexing/article/details/93192484
+
+sdk对应版本号
+
+
+
+| 平台版本      | SDK版本 | 版本名称                         |
+| ------------- | ------- | -------------------------------- |
+| 9.0           | 28      | Pie (Android P)                  |
+| 8.1           | 27      | Oreo(Android O)（奥利奥）        |
+| 8.0           | 26      | Oreo(Android O)（奥利奥）        |
+| 7.1           | 25      | Nougat(Android N)（牛轧糖）      |
+| 7.0           | 24      | Nougat(Android N)（牛轧糖）      |
+| 6.0           | 23      | Marshmallow(Android M)（棉花糖） |
+| 5.1           | 22      | Lollipop(Android L)（棒棒糖）    |
+| 5.0           | 21      | Lollipop(Android L)（棒棒糖）    |
+| 2.3.3 2.3.4   | 10      | GINGERBREAD_MR1                  |
+| 4.4           | 19      | KITKAT（奇巧巧克力）             |
+| 4.3           | 18      | JELLY_BEAN_MR2                   |
+| 4.2- 4.2.2    | 17      | JELLY_BEAN_MR1                   |
+| 4.1 -4.1.1    | 16      | JELLY_BEAN                       |
+| 4.0.3 -4.0.4  | 15      | ICE_CREAM_SANDWICH_MR1           |
+| 4.0 4.01 4.02 | 14      | ICE_CREAM_SANDWICH               |
+| 3.2 13        | 13      | HONEYCOMB_MR2                    |
+| 3.1.X         | 12      | HONEYCOMB_MR1                    |
+| 3.0.X         | 11      | HONEYCOMB                        |
+
