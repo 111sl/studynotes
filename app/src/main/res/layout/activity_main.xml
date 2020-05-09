@@ -43,4 +43,12 @@
         android:layout_height="wrap_content"
         android:text="暂停"/>
 
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无歌曲"
+        android:textSize="30dp"
+        />
+
 </LinearLayout>

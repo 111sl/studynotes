@@ -15,15 +15,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.uncledrew.aidltestservice.ICallbackInterface;
 import com.example.uncledrew.aidltestservice.aidlTest;
 import com.example.uncledrew.studynotes.service.LocalService;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private aidlTest mAidlTest;
+    public static aidlTest mAidlTest;
+    public TextView state_textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Button unbind_button = findViewById(R.id.unbind_button);
         Button first_button = findViewById(R.id.first_button);
         Button second_button = findViewById(R.id.second_button);
+        state_textview = findViewById(R.id.state);
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private ServiceConnection connection = new ServiceConnection() {
@@ -96,6 +101,21 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             Log.d(TAG, "onServiceConnected");
             mAidlTest = aidlTest.Stub.asInterface(service);
+            try {
+                mAidlTest.addPlayCallback(new ICallbackInterface.Stub() {
+                    @Override
+                    public void showState(int state) throws RemoteException {
+                        Log.d(TAG, "showState "+state);
+                        if(state==0){
+                            state_textview.setText("暂停");
+                        }else if(state==1){
+                            state_textview.setText("正在播放");
+                        }
+                    }
+                });
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
             if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(MainActivity.this,new String[]{
                         Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -132,5 +152,7 @@ public class MainActivity extends AppCompatActivity {
             default:
         }
     }
+
+
 
 }
