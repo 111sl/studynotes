@@ -1,8 +1,8 @@
 package com.example.uncledrew.aidltestservice;
 import com.example.uncledrew.aidltestservice.ICallbackInterface;
 interface aidlTest{
-    void first(int a);
-    void second(int b);
+    void play(int state);
+    void pause(int state);
     void initMediaPlayer();
 
     void addPlayCallback(ICallbackInterface iCallbackInterface);

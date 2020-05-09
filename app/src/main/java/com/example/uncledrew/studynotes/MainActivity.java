@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView state_textview;
     private TextView time_textview;
     private static int time = 0;
+
+    //设定状态的变量，true为播放，false为暂停
     private boolean flag = true;
 
     @Override
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    mAidlTest.first(1);
+                    mAidlTest.play(1);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    mAidlTest.second(2);
+                    mAidlTest.pause(2);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             Log.d(TAG, "onServiceConnected");
             mAidlTest = aidlTest.Stub.asInterface(service);
+            //实现回调函数中方法
             try {
                 mAidlTest.addPlayCallback(new ICallbackInterface.Stub() {
                     @Override
@@ -143,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+            //绑定后获取权限
             if(ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(MainActivity.this,new String[]{
                         Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -180,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    //new一个hanler处理发送来的消息执行UI在子线程的更新
     private Handler handler = new Handler(){
         public void handleMessage(Message msg){
             switch (msg.what){
