@@ -7,19 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/test_button"
+        android:id="@+id/start_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试按钮"/>
+        android:text="startService"/>
+
+    <Button
+        android:id="@+id/stop_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stopService"/>
+
+    <Button
+        android:id="@+id/bind_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bindService音乐播放服务"/>
+
+    <Button
+        android:id="@+id/unbind_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="unbindService"/>
+
+    <Button
+        android:id="@+id/first_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放"/>
+
+    <Button
+        android:id="@+id/second_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="暂停"/>
 
 </LinearLayout>
